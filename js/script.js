@@ -3,6 +3,25 @@ $(document).ready(function() {
 
     var fullHeight = $(window).height();
     var halfHeight = fullHeight / 2;
+    
+    $("#typed").typed({
+        strings: [
+            "your entrepreneurial capability", 
+            "your foundation for thinking like a startup",
+            "your links to the entrepreneurial community",
+            "your inner entrepreneurial fire",
+            "a global company",
+            "an exponential culture",
+            "your potential to change the world",
+            "a global market",
+            "the fire under your team",
+            "a business that shapes tomorrow’s world",
+            "a team of awesome",
+            "brilliance",
+            "a fast prototype"
+        ],
+        typeSpeed: 50
+      });
 
     // init controller
     var controller = new ScrollMagic.Controller();

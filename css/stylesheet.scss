@@ -137,31 +137,31 @@ section > .image-wrapper {
 }
 
 .heading-wrapper {
-    
+
     display: inline-block;
     position: relative;
-    
+
     h4 {
         display: inline-block;
         text-transform: uppercase;
         font-weight: 500;
         font-size: 72px;
     }
-    
+
     h4.subtitle {
         padding-bottom: 42px;
     }
-    
+
     h4.superscript {
         margin-bottom: 0px;
     }
-    
+
     svg {
         position: absolute;
         width: 60%;
         top: 60%;
     }
-    
+
     .svg-right {
         left: 50%;
         @include transform(rotate(-15deg));
@@ -206,6 +206,11 @@ section > .image-wrapper {
 // HERO
 // ####
 
+.main-heading {
+    padding-bottom: 120px;
+    font-weight: 300;
+}
+
 #lion {
     top: 50%;
     width: 30%;
@@ -233,7 +238,7 @@ section > .image-wrapper {
     top: auto;
     left: 0px;
     width: 120%;
-    
+
     path {
         stroke-width: 4px;
     }
@@ -253,7 +258,7 @@ section > .image-wrapper {
     top: 50%;
     left: 10%;
     width: 100%;
-    
+
     path {
         stroke-width: 8px;
     }
@@ -282,11 +287,14 @@ footer.dark-footer {
 }
 
 footer {
+
+    a, p, h6 {
+        color: $off-white;
+    }
+
     .footer-copyright {
         background-color: black;
         padding: 10px 5%;
-        float: left;
-        width: 100%;
 
         @media only screen and (min-width: 601px) {
             padding: 10px 7.5%;
@@ -294,10 +302,6 @@ footer {
 
         @media only screen and (min-width: 992px) {
             padding: 10px 15%;
-        }
-
-        a, p {
-            color: $off-white;
         }
     }
 }
@@ -370,4 +374,26 @@ footer {
     13.5% {
         opacity: 1.0;
     }
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
