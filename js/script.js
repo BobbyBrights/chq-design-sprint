@@ -6,22 +6,22 @@ $(document).ready(function() {
     
     $("#typed").typed({
         strings: [
-            "your entrepreneurial capability", 
-            "your foundation for thinking like a startup",
-            "your links to the entrepreneurial community",
-            "your inner entrepreneurial fire",
-            "a global company",
-            "an exponential culture",
-            "your potential to change the world",
-            "a global market",
-            "the fire under your team",
-            "a business that shapes tomorrow’s world",
-            "a team of awesome",
-            "brilliance",
-            "a fast prototype"
+            "Build an awesome team",
+            "Measure what customers want",
+            "Learn to think like a startup",
+            "Build entrepreneurial capability",
+            "Measure your impact",
+            "Learn how to change the world",
+            "Build a global company",
+            "Measure your growth",
+            "Learn exponential culture",
+            "Build prototypes quickly",
+            "Measure your speed",
+            "Learn to fail"
         ],
-        typeSpeed: 70,
-        backDelay: 2000
+        typeSpeed: 50,
+        backDelay: 1000,
+        loop: true
       });
 
     // init controller

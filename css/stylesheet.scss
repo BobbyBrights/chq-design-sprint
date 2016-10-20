@@ -62,6 +62,7 @@
 // #########
 
 $off-white: #f0f0f0;
+$off-white-hover: #e0e0e0;
 $dark-grey: #222222;
 $chq-red: #f91747;
 $chq-blue: #01a0e4;
@@ -102,14 +103,34 @@ ul.red-hover a:hover {
     text-shadow: 0px 0px 2px $chq-red;
 }
 
+.red-hover:hover i {
+    color: $chq-red;
+}
+
 ul.blue-hover a:hover {
     color: $chq-blue;
     text-shadow: 0px 0px 2px $chq-blue;
 }
 
+.blue-hover:hover i {
+    color: $chq-blue;
+}
+
 ul.green-hover a:hover {
     color: $chq-green;
     text-shadow: 0px 0px 2px $chq-green;
+}
+
+.green-hover:hover i {
+    color: $chq-green;
+}
+
+a:hover i {
+    @include transition(all 0.3s);
+}
+
+a.social {
+    margin: 0px 9px;
 }
 
 section {
@@ -202,13 +223,33 @@ section > .image-wrapper {
     }
 }
 
+.btn {
+    color: $dark-grey;
+    background-color: $off-white;
+    font-weight: 500;
+}
+
+.btn:hover, .btn:active {
+    color: $off-white;
+    background-color: $chq-red;
+}
+
 // ####
 // HERO
 // ####
 
-.main-heading {
-    padding-bottom: 300px;
-    font-weight: 500;
+.col.hero-wrapper {
+    padding-bottom: 100px;
+    
+    .main-heading {
+        padding-bottom: 100px;
+        font-weight: 500;
+        font-size: 60px;
+    }
+    
+    i {
+        font-size: 50px;
+    }
 }
 
 #lion {
@@ -275,11 +316,12 @@ section > .image-wrapper {
 // FOOTER
 // ######
 
-#fade {
-    background: -webkit-linear-gradient(transparent, $dark-grey); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(transparent, $dark-grey); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(transparent, $dark-grey); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(transparent, $dark-grey);
+#graffiti {
+    font-size: 0px;
+    
+    img {
+        width: 100%;
+    }
 }
 
 footer.dark-footer {
@@ -287,16 +329,20 @@ footer.dark-footer {
 }
 
 footer {
+    
+    .row.padded {
+        margin-bottom: 30px;
+    }
 
     a, p, h6 {
         color: $off-white;
     }
-    
+
     h6 {
         text-transform: uppercase;
         font-weight: 500;
     }
-    
+
     li {
         padding-bottom: 10px;
     }
