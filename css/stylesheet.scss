@@ -92,14 +92,22 @@ ul li a {
     font-weight: 300;
 }
 
-ul.big li a {
-    font-size: 26px;
-    padding-top: 5px;
+ul.big li {
+    padding-top: 15px;
+    
+    a {
+        font-size: 26px;
+        padding-top: 5px;
+    }
 }
 
-ul.medium li a {
-    font-size: 20px;
-    padding-top: 11px;
+ul.medium li {
+    padding-top: 21px;
+
+    a {
+        padding-top: 10px;
+        font-size: 20px;
+    }
 }
 
 ul.red-hover a:hover {
@@ -135,6 +143,10 @@ footer a.social:hover i {
 
 .pad-right {
     padding-left: 10px;
+}
+
+.pad-left {
+    padding-right: 10px;
 }
 
 a.social {
@@ -248,7 +260,7 @@ section > .image-wrapper {
 
 .col.hero-wrapper {
     padding-bottom: 100px;
-    
+
     .main-heading {
         padding-bottom: 100px;
         font-weight: 500;
@@ -260,12 +272,12 @@ section > .image-wrapper {
     opacity: 1;
     display: inline-block;
     @include transition(all 0.3s);
-    
+
     i { 
         font-size: 50px;
         position: relative;
     }
-    
+
     p {
         text-transform: uppercase;
         font-weight: 300;
@@ -326,7 +338,7 @@ section > .image-wrapper {
 }
 
 #wolf-2 {
-    top: 30%;
+    top: 35%;
     width: 30%;
     @include calc(right, '10% - 1000px');
 }
@@ -346,7 +358,7 @@ section > .image-wrapper {
 }
 
 #rocket-2 {
-    top: 15%;
+    top: 25%;
     width: 25%;
     @include calc(left, '10% - 1000px');
     @include transform(rotate(45deg));
@@ -358,7 +370,7 @@ section > .image-wrapper {
 
 #graffiti {
     font-size: 0px;
-    
+
     img {
         width: 100%;
     }
@@ -369,20 +381,20 @@ footer.dark-footer {
 }
 
 footer {
-    
+
     .main-description {
         font-weight: 300;
         font-size: 26px;
     }
-    
+
     .row.padded {
         margin-bottom: 30px;
     }
-    
+
     .row.padded-lots {
         margin-bottom: 60px;
     }
-    
+
     .svg-wrapper {
         margin: 30px 0px 15px 0px;
     }
@@ -399,7 +411,7 @@ footer {
     li {
         padding-bottom: 10px;
     }
-    
+
     .btn .fa-coffee {
         position: relative;
         top: 1px;
