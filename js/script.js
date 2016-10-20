@@ -116,14 +116,14 @@ $(document).ready(function() {
     .add(TweenMax.to($("#wolf-2"), 1, {css:{bezier:wolfPath.in}, ease:Power1.easeInOut}));
 
     // build scene
-    var lionScene = new ScrollMagic.Scene({triggerElement: "#bold", duration: 500, offset: 100})
+    var lionScene = new ScrollMagic.Scene({triggerElement: "#bold", duration: 500, offset: -100})
     //.setPin("#target")
     .setTween(lionTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
     // build scene
-    var wolfScene = new ScrollMagic.Scene({triggerElement: "#invested", duration: 500})
+    var wolfScene = new ScrollMagic.Scene({triggerElement: "#invested", duration: 500, offset: -200})
     //.setPin("#target")
     .setTween(wolfTween)
     //.addIndicators() // add indicators (requires plugin)
