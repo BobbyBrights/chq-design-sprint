@@ -171,7 +171,7 @@ section > .image-wrapper {
 .svg-text {
     path {
         fill: none;
-        stroke-width: 5px;
+        stroke-width: 6px;
         stroke: $dark-grey;
         stroke-linecap: round;
     }
@@ -213,9 +213,9 @@ section > .image-wrapper {
 }
 
 #wolf {
-    top: 70%;
-    width: 20%;
-    left: 40%;
+    top: 60%;
+    width: 25%;
+    left: 37.5%;
 }
 
 #rocket {
@@ -253,6 +253,10 @@ section > .image-wrapper {
     top: 50%;
     left: 10%;
     width: 100%;
+    
+    path {
+        stroke-width: 8px;
+    }
 }
 
 #rocket-2 {
