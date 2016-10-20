@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6, a, ul, ol, li {
     color: $dark-grey;
 }
 
+a {
+    cursor: pointer;
+}
+
 ul li a {
     line-height: 1.5;
     letter-spacing: 1px;
@@ -125,7 +129,7 @@ footer .green-hover:hover i {
     color: $chq-green;
 }
 
-.footer a:hover i {
+footer a:hover i {
     @include transition(all 0.3s);
 }
 
@@ -250,8 +254,13 @@ section > .image-wrapper {
         font-weight: 500;
         font-size: 60px;
     }
+}
+
+#down-arrow {
+    opacity: 0;
+    @include transition(all 0.3s);
     
-    i {
+    i { 
         font-size: 50px;
     }
 }
@@ -357,6 +366,11 @@ footer {
 
     li {
         padding-bottom: 10px;
+    }
+    
+    .btn .fa-coffee {
+        position: relative;
+        top: 1px;
     }
 
     .footer-copyright {

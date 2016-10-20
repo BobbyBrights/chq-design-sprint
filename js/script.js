@@ -1,6 +1,13 @@
+var stringsTyped = 0;
 
 $(document).ready(function() {
+    
+    $("#down-arrow").click(function() {
+        var scrollTarget = $('#bold').offset().top;
 
+        $('html, body').animate({scrollTop: scrollTarget}, 1200);
+    });
+    
     var fullHeight = $(window).height();
     var halfHeight = fullHeight / 2;
     
@@ -21,7 +28,8 @@ $(document).ready(function() {
         ],
         typeSpeed: 50,
         backDelay: 1000,
-        loop: true
+        loop: true,
+        onStringTyped: stringTyped
       });
 
     // init controller
@@ -229,6 +237,14 @@ $(document).ready(function() {
     .addTo(controller);
 });
 
+function stringTyped() {
+    console.log(stringsTyped);
+    stringsTyped++;
+    
+    if (stringsTyped >= 3) {
+        $("#down-arrow").css("opacity", 1);
+    }
+}
 
 function pathPrepare (path) {
     var lineLength = path[0].getTotalLength();
