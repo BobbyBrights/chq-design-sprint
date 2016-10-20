@@ -103,7 +103,7 @@ ul.red-hover a:hover {
     text-shadow: 0px 0px 2px $chq-red;
 }
 
-.red-hover:hover i {
+footer .red-hover:hover i {
     color: $chq-red;
 }
 
@@ -112,7 +112,7 @@ ul.blue-hover a:hover {
     text-shadow: 0px 0px 2px $chq-blue;
 }
 
-.blue-hover:hover i {
+footer .blue-hover:hover i {
     color: $chq-blue;
 }
 
@@ -121,12 +121,16 @@ ul.green-hover a:hover {
     text-shadow: 0px 0px 2px $chq-green;
 }
 
-.green-hover:hover i {
+footer .green-hover:hover i {
     color: $chq-green;
 }
 
-a:hover i {
+.footer a:hover i {
     @include transition(all 0.3s);
+}
+
+.pad-right {
+    padding-left: 10px;
 }
 
 a.social {
