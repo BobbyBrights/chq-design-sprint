@@ -129,7 +129,7 @@ footer .green-hover:hover i {
     color: $chq-green;
 }
 
-footer a:hover i {
+footer a.social:hover i {
     @include transition(all 0.3s);
 }
 
@@ -370,6 +370,11 @@ footer.dark-footer {
 
 footer {
     
+    .main-description {
+        font-weight: 300;
+        font-size: 26px;
+    }
+    
     .row.padded {
         margin-bottom: 30px;
     }
@@ -379,7 +384,7 @@ footer {
     }
     
     .svg-wrapper {
-        margin: 30px 0px;
+        margin: 30px 0px 15px 0px;
     }
 
     a, p, h6 {
