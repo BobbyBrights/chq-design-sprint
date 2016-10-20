@@ -1,0 +1,353 @@
+---
+---
+
+// ######
+// MIXINS
+// ######
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -o-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin text-shadow($shadow) {
+    -moz-text-shadow: $shadow;
+    -webkit-text-shadow: $shadow;
+    text-shadow: $shadow;
+}
+
+@mixin animate($animation) {
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+// #########
+// VARIABLES
+// #########
+
+$off-white: #f0f0f0;
+$dark-grey: #222222;
+$chq-red: #f91747;
+$chq-blue: #01a0e4;
+$chq-green: #cef919;
+
+// #######
+// GENERAL
+// #######
+
+html, body {
+    background-color: $off-white;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, a, ul, ol, li {
+    font-family: 'Graphik', sans-serif;
+    color: $dark-grey;
+}
+
+ul li a {
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+ul.big li a {
+    font-size: 26px;
+    padding-top: 5px;
+}
+
+ul.medium li a {
+    font-size: 20px;
+    padding-top: 11px;
+}
+
+ul.red-hover a:hover {
+    color: $chq-red;
+    text-shadow: 0px 0px 2px $chq-red;
+}
+
+ul.blue-hover a:hover {
+    color: $chq-blue;
+    text-shadow: 0px 0px 2px $chq-blue;
+}
+
+ul.green-hover a:hover {
+    color: $chq-green;
+    text-shadow: 0px 0px 2px $chq-green;
+}
+
+section {
+    position: relative;
+}
+
+.row {
+    width: 100%;
+}
+
+section > .image-wrapper {
+    position: absolute;
+}
+
+.container.full-height {
+    min-height: 100vh;
+}
+
+.container.half-height {
+    min-height: 50vh;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.heading-wrapper {
+    
+    display: inline-block;
+    position: relative;
+    
+    h4 {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 72px;
+    }
+    
+    h4.subtitle {
+        padding-bottom: 42px;
+    }
+    
+    h4.superscript {
+        margin-bottom: 0px;
+    }
+    
+    svg {
+        position: absolute;
+        width: 60%;
+        top: 60%;
+    }
+    
+    .svg-right {
+        left: 50%;
+        @include transform(rotate(-15deg));
+    }
+}
+
+.svg-text {
+    path {
+        fill: none;
+        stroke-width: 5px;
+        stroke: $dark-grey;
+        stroke-linecap: round;
+    }
+}
+
+.svg-text.svg-red {
+    path {
+        stroke: $chq-red;
+    }
+}
+
+.svg-text.svg-blue {
+    path {
+        stroke: $chq-blue;
+    }
+}
+
+.svg-text.svg-green {
+    path {
+        stroke: $chq-green;
+    }
+}
+
+.image-wrapper {
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+// ####
+// HERO
+// ####
+
+#lion {
+    top: 50%;
+    width: 30%;
+    left: 0px;
+}
+
+#wolf {
+    top: 70%;
+    width: 20%;
+    left: 40%;
+}
+
+#rocket {
+    top: 50%;
+    width: 30%;
+    left: 70%;
+    @include transform(rotate(-30deg));
+}
+
+// ########
+// INVESTED
+// ########
+
+#svg-invested {
+    bottom: 0px;
+    top: auto;
+    left: 0px;
+    width: 120%;
+    
+    path {
+        stroke-width: 4px;
+    }
+}
+
+#wolf-2 {
+    top: 30%;
+    width: 20%;
+    @include calc(right, '10% - 1000px');
+}
+
+// ######
+// FOOTER
+// ######
+
+#fade {
+    background: -webkit-linear-gradient(transparent, $dark-grey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent, $dark-grey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent, $dark-grey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent, $dark-grey);
+}
+
+footer.dark-footer {
+    background-color: $dark-grey;
+}
+
+footer {
+    .footer-copyright {
+        background-color: black;
+        padding: 10px 5%;
+        float: left;
+        width: 100%;
+
+        @media only screen and (min-width: 601px) {
+            padding: 10px 7.5%;
+        }
+
+        @media only screen and (min-width: 992px) {
+            padding: 10px 15%;
+        }
+
+        a, p {
+            color: $off-white;
+        }
+    }
+}
+
+// ###########
+// FOOTER LOGO
+// ###########
+
+.svg-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#chq-neon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: neon 2s infinite;
+}
+
+.stroke {
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+    stroke-linejoin: round;
+}
+
+.stroke.neon {
+    stroke-width: 6px;
+}
+
+.stroke.white {
+    stroke: #ffffff;
+}
+
+.stroke.red {
+    stroke: #f91747;
+}
+
+.stroke.green {
+    stroke: #cef919;
+}
+
+.stroke.blue {
+    stroke: #01a0e4;
+}
+
+// ##########
+// ANIMATIONS
+// ##########
+
+/*flickering Neon*/
+@keyframes neon {
+
+    0%, 9%, 12%, 13%, 16%, 75%, 78%, 80%, 83%, 100% {
+        opacity: 0.6;  		
+    }
+
+    /*small flicker*/
+    75.5% {
+        opacity: 0.7;
+    }
+    /*medium flicker*/ 
+    9.5%, 80.5% {
+        opacity: 0.8;
+    }
+    /*large flicker*/
+    13.5% {
+        opacity: 1.0;
+    }
+}
