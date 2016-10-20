@@ -65,7 +65,7 @@ $off-white: #f0f0f0;
 $dark-grey: #222222;
 $chq-red: #f91747;
 $chq-blue: #01a0e4;
-$chq-green: #cef919;
+$chq-green: #B5E000;
 
 // #######
 // GENERAL
@@ -243,6 +243,17 @@ section > .image-wrapper {
     top: 30%;
     width: 20%;
     @include calc(right, '10% - 1000px');
+}
+
+// #########
+// CONNECTED
+// #########
+
+#rocket-2 {
+    top: 30%;
+    width: 25%;
+    @include calc(left, '10% - 1000px');
+    @include transform(rotate(45deg));
 }
 
 // ######

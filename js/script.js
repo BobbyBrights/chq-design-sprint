@@ -79,6 +79,17 @@ $(document).ready(function() {
             ]
         }
     };
+    
+    var rocketPath = {
+        in : {
+            curviness: 1.25,
+            values: [
+                {x: 0, y:0 },
+                {x: 800,	y: 100},
+                {x: 1000,	y: 0}
+            ]
+        }
+    };
 
     // build tween
     var ideasTween = new TimelineMax()
@@ -114,6 +125,10 @@ $(document).ready(function() {
     // create tween
     var wolfTween = new TimelineMax()
     .add(TweenMax.to($("#wolf-2"), 1, {css:{bezier:wolfPath.in}, ease:Power1.easeInOut}));
+    
+    // create tween
+    var rocketTween = new TimelineMax()
+    .add(TweenMax.to($("#rocket-2"), 1, {css:{bezier:rocketPath.in}, ease:Power1.easeInOut}));
 
     // build scene
     var lionScene = new ScrollMagic.Scene({triggerElement: "#bold", duration: 500, offset: -100})
@@ -126,6 +141,13 @@ $(document).ready(function() {
     var wolfScene = new ScrollMagic.Scene({triggerElement: "#invested", duration: 500, offset: -200})
     //.setPin("#target")
     .setTween(wolfTween)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+    // build scene
+    var rocketScene = new ScrollMagic.Scene({triggerElement: "#connected", duration: 500, offset: -100})
+    //.setPin("#target")
+    .setTween(rocketTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
