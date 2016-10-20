@@ -207,8 +207,8 @@ section > .image-wrapper {
 // ####
 
 .main-heading {
-    padding-bottom: 120px;
-    font-weight: 300;
+    padding-bottom: 300px;
+    font-weight: 500;
 }
 
 #lion {
@@ -290,6 +290,15 @@ footer {
 
     a, p, h6 {
         color: $off-white;
+    }
+    
+    h6 {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    li {
+        padding-bottom: 10px;
     }
 
     .footer-copyright {

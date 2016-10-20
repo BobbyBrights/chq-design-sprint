@@ -20,7 +20,8 @@ $(document).ready(function() {
             "brilliance",
             "a fast prototype"
         ],
-        typeSpeed: 50
+        typeSpeed: 70,
+        backDelay: 2000
       });
 
     // init controller
