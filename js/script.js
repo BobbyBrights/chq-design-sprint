@@ -241,8 +241,12 @@ function stringTyped() {
     console.log(stringsTyped);
     stringsTyped++;
     
-    if (stringsTyped >= 3) {
-        $("#down-arrow").css("opacity", 1);
+    if (stringsTyped >= 9) {
+        $("#down-arrow").addClass("scroll-down");
+    } else if (stringsTyped >= 6) {
+        $("#down-arrow").addClass("bouncy");
+    } else if (stringsTyped >= 3) {
+        $("#down-arrow").removeClass("hidden");
     }
 }
 

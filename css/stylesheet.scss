@@ -257,12 +257,39 @@ section > .image-wrapper {
 }
 
 #down-arrow {
-    opacity: 0;
+    opacity: 1;
+    display: inline-block;
     @include transition(all 0.3s);
     
     i { 
         font-size: 50px;
+        position: relative;
     }
+    
+    p {
+        text-transform: uppercase;
+        font-weight: 300;
+        margin: 0px;
+        margin-top: -10px;
+        font-size: 10px;
+        opacity: 0;
+        @include transition(all 0.3s);
+    }
+}
+
+#down-arrow.hidden {
+    opacity: 0;
+    cursor: default;
+}
+
+#down-arrow.bouncy i {
+    -webkit-animation: bounce 0.7s infinite;
+    -moz-animation: bounce 0.7s infinite;
+    animation: bounce 0.7s infinite;
+}
+
+#down-arrow.scroll-down p {
+    opacity: 1;
 }
 
 #lion {
@@ -477,4 +504,13 @@ footer {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
+}
+
+@keyframes bounce{
+    0%, 100% { bottom: 0px; }
+    10%, 90% { bottom: 12px; }
+    20%, 80% { bottom: 18px; }
+    30%, 70% { bottom: 21px; }
+    40%, 60% { bottom: 23px; }
+    48%, 52% { bottom: 25px; }
 }
