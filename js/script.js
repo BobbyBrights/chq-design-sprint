@@ -54,6 +54,31 @@ $(document).ready(function() {
     pathPrepare(areYouU);
     pathPrepare(areYouQ1);
     pathPrepare(areYouQ2);
+    
+    var communityC = $("path#community-c");
+    var communityO = $("path#community-o");
+    var communityM1 = $("path#community-m1");
+    var communityM2 = $("path#community-m2");
+    var communityU = $("path#community-u");
+    var communityN = $("path#community-n");
+    var communityI = $("path#community-i");
+    var communityT1 = $("path#community-t1");
+    var communityT2 = $("path#community-t2");
+    var communityY1 = $("path#community-y1");
+    var communityY2 = $("path#community-y2");
+
+    // prepare SVG
+    pathPrepare(communityC);
+    pathPrepare(communityO);
+    pathPrepare(communityM1);
+    pathPrepare(communityM2);
+    pathPrepare(communityU);
+    pathPrepare(communityN);
+    pathPrepare(communityI);
+    pathPrepare(communityT1);
+    pathPrepare(communityT2);
+    pathPrepare(communityY1);
+    pathPrepare(communityY2);
 
     var lionPath = {
         down : {
@@ -117,6 +142,20 @@ $(document).ready(function() {
     .add(TweenMax.to(areYouU, 0.12, {strokeDashoffset: 0, ease:Linear.easeNone}))
     .add(TweenMax.to(areYouQ1, 0.08, {strokeDashoffset: 0, ease:Linear.easeNone}))
     .add(TweenMax.to(areYouQ2, 0.02, {strokeDashoffset: 0, ease:Linear.easeNone}));
+    
+    // build tween
+    var communityTween = new TimelineMax()
+    .add(TweenMax.to(communityC, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityO, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityM1, 0.15, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityM2, 0.15, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityU, 0.12, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityN, 0.15, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityI, 0.05, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityT1, 0.05, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityT2, 0.08, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityY1, 0.02, {strokeDashoffset: 0, ease:Linear.easeNone}))
+    .add(TweenMax.to(communityY2, 0.08, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
     // create tween
     var lionTween = new TimelineMax()
@@ -138,14 +177,14 @@ $(document).ready(function() {
     .addTo(controller);
     
     // build scene
-    var wolfScene = new ScrollMagic.Scene({triggerElement: "#invested", duration: 500, offset: -200})
+    var wolfScene = new ScrollMagic.Scene({triggerElement: "#invested", duration: 500, offset: -100})
     //.setPin("#target")
     .setTween(wolfTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
     // build scene
-    var rocketScene = new ScrollMagic.Scene({triggerElement: "#connected", duration: 500, offset: -100})
+    var rocketScene = new ScrollMagic.Scene({triggerElement: "#connecting", duration: 500, offset: -100})
     //.setPin("#target")
     .setTween(rocketTween)
     //.addIndicators() // add indicators (requires plugin)
@@ -158,8 +197,14 @@ $(document).ready(function() {
     .addTo(controller);
     
     // build scene
-    var areYou = new ScrollMagic.Scene({triggerElement: "#invested", duration: halfHeight, offset: -200, tweenChanges: true})
+    var areYou = new ScrollMagic.Scene({triggerElement: "#invested", duration: halfHeight * .75, offset: 100, tweenChanges: true})
     .setTween(areYouTween)
+    //.addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+    
+    // build scene
+    var communityScene = new ScrollMagic.Scene({triggerElement: "#connecting", duration: halfHeight * .75, offset: 100, tweenChanges: true})
+    .setTween(communityTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 });

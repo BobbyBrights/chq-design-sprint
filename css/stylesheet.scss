@@ -241,16 +241,22 @@ section > .image-wrapper {
 
 #wolf-2 {
     top: 30%;
-    width: 20%;
+    width: 30%;
     @include calc(right, '10% - 1000px');
 }
 
-// #########
-// CONNECTED
-// #########
+// ##########
+// CONNECTING
+// ##########
+
+#svg-connecting {
+    top: 50%;
+    left: 10%;
+    width: 100%;
+}
 
 #rocket-2 {
-    top: 30%;
+    top: 15%;
     width: 25%;
     @include calc(left, '10% - 1000px');
     @include transform(rotate(45deg));
