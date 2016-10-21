@@ -2,10 +2,20 @@ var stringsTyped = 0;
 
 $(document).ready(function() {
     
-    $("#down-arrow").click(function() {
-        var scrollTarget = $('#bold').offset().top;
+    $(".anchor-link").click(function(e) {
+        e.preventDefault();
+        
+        var current = $(window).scrollTop();
+        var target = $(this).attr("href");
+        if (!target) {
+            target = $(this).data("href");
+        }
+        
+        var scrollTarget = $(target).offset().top;
+        
+        var duration = Math.abs(scrollTarget - current) / 1.5;
 
-        $('html, body').animate({scrollTop: scrollTarget}, 1200);
+        $('html, body').animate({scrollTop: scrollTarget}, duration);
     });
     
     var fullHeight = $(window).height();
@@ -225,13 +235,13 @@ $(document).ready(function() {
     .addTo(controller);
     
     // build scene
-    var areYou = new ScrollMagic.Scene({triggerElement: "#invested", duration: halfHeight * .75, offset: 100, tweenChanges: true})
+    var areYou = new ScrollMagic.Scene({triggerElement: "#invested", duration: halfHeight * .75, offset: 00, tweenChanges: true})
     .setTween(areYouTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
     
     // build scene
-    var communityScene = new ScrollMagic.Scene({triggerElement: "#connecting", duration: halfHeight * .75, offset: 100, tweenChanges: true})
+    var communityScene = new ScrollMagic.Scene({triggerElement: "#connecting", duration: halfHeight * .75, offset: 00, tweenChanges: true})
     .setTween(communityTween)
     //.addIndicators() // add indicators (requires plugin)
     .addTo(controller);
@@ -242,9 +252,10 @@ function stringTyped() {
     stringsTyped++;
     
     if (stringsTyped >= 9) {
-        $("#down-arrow").addClass("scroll-down");
+        
     } else if (stringsTyped >= 6) {
         $("#down-arrow").addClass("bouncy");
+        $("#down-arrow").addClass("scroll-down");
     } else if (stringsTyped >= 3) {
         $("#down-arrow").removeClass("hidden");
     }
