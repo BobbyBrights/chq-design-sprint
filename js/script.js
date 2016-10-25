@@ -23,18 +23,9 @@ $(document).ready(function() {
     
     $("#typed").typed({
         strings: [
-            "Build an awesome team",
-            "Measure what customers want",
-            "Learn to think like a startup",
-            "Build entrepreneurial capability",
-            "Measure your impact",
-            "Learn how to change the world",
-            "Build a global company",
-            "Measure your growth",
-            "Learn exponential culture",
-            "Build prototypes quickly",
-            "Measure your speed",
-            "Learn to fail"
+            "Startups",
+            "Corporates",
+            "Government Departments"
         ],
         typeSpeed: 50,
         backDelay: 1000,
@@ -119,15 +110,12 @@ $(document).ready(function() {
     pathPrepare(communityY2);
 
     var lionPath = {
-        down : {
+        in : {
             curviness: 1.25,
             values: [
-                {x: 0,	y: 0},
-                {x: -100,	y: fullHeight * 0.25},
-                {x: -150,	y: fullHeight * 0.50},
-                {x: -150,	y: fullHeight * 0.75},
-                {x: -100,	y: fullHeight * 0.9},
-                {x: 0,	y: fullHeight * 0.85}
+                {x: 0, y:0 },
+                {x: 800,	y: 100},
+                {x: 1000,	y: 0}
             ]
         }
     };
@@ -197,7 +185,7 @@ $(document).ready(function() {
 
     // create tween
     var lionTween = new TimelineMax()
-    .add(TweenMax.to($("#lion"), 1, {css:{bezier:lionPath.down}, ease:Power1.easeInOut}));
+    .add(TweenMax.to($("#lion"), 1, {css:{bezier:lionPath.in}, ease:Power1.easeInOut}));
     
     // create tween
     var wolfTween = new TimelineMax()

@@ -173,6 +173,10 @@ section > .image-wrapper {
     min-height: 50vh;
 }
 
+.container.three-quarter-height {
+    min-height: 75vh;
+}
+
 .full-width {
     width: 100%;
 }
@@ -258,13 +262,20 @@ section > .image-wrapper {
 // HERO
 // ####
 
+#hero {
+    background-image: url(../img/hero.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
 .col.hero-wrapper {
-    padding-bottom: 100px;
 
     .main-heading {
-        padding-bottom: 100px;
+        color: $off-white;
         font-weight: 500;
-        font-size: 60px;
+        font-size: 30px;
+        @include text-shadow(1px 2px 2px rgba(0,0,0,.7));
     }
 }
 
@@ -304,22 +315,14 @@ section > .image-wrapper {
     opacity: 1;
 }
 
+// ####
+// BOLD
+// ####
+
 #lion {
-    top: 50%;
+    top: 25%;
     width: 30%;
-    left: 0px;
-}
-
-#wolf {
-    top: 60%;
-    width: 25%;
-    left: 37.5%;
-}
-
-#rocket {
-    top: 50%;
-    width: 30%;
-    left: 70%;
+    @include calc(left, '10% - 1000px');
 }
 
 // ########
